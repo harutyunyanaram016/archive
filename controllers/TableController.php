@@ -12,6 +12,7 @@ use yii\web\Response;
 use app\models\LoginForm;
 use yii\web\UploadedFile;
 use app\models\UploadForm;
+use yii\data\Pagination;
 
 /**
  * TableController implements the CRUD actions for Table model.
@@ -82,14 +83,21 @@ class TableController extends Controller
 
     public function actionIndex()
     {
-//        $connection = Yii::$app->db;
-//        $sql = 'SELECT * FROM `table` WHERE MONTH(payment_date) = MONTH(NOW())';
-//        $command = $connection->createCommand($sql);
-//        $row = $command->queryAll();
+
+
+        $query = Table::find();
+        $count = $query->count();
+        $pagination = new Pagination(['totalCount' => $count]);
         if(isset($_GET['sort'])){
-            $dataProvider = Table::find()->orderBy($_GET['sort'])->all();
+            $dataProvider = $query->orderBy($_GET['sort'])->offset($pagination->offset)
+                ->limit($pagination->limit)
+                ->all();
+//            $dataProvider = Table::find()->orderBy($_GET['sort'])->all();
         }else{
-            $dataProvider = Table::find()->all();
+            $dataProvider = $query->offset($pagination->offset)
+                ->limit($pagination->limit)
+                ->all();
+//            $dataProvider = Table::find()->all();
         }
 
 

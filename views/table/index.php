@@ -19,9 +19,9 @@ $this->title = 'Աշխատանքային վահանակ';
         <?= Html::a('Վերբեռնել', ['import'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <div id="w0" class="grid-view"><div class="summary">Showing <b>1-17</b> of <b>17</b> items.</div>
+    <div id="w0" class="grid-view">
         <p class="text-right">
-            <label> <input type="checkbox" id="checkbox"> Թերի վճարողները</label>
+            <label> <input type="checkbox" id="checkbox"> Թերի վճավարծները</label>
         </p>
         <div class="content" id="content">
             <table class="table table-striped table-bordered" id="myTable"><thead>

@@ -8,19 +8,19 @@ use yii\widgets\ActiveForm;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $model app\models\UploadForm */
 
-$this->title = 'Վերբեռնել CSV';
+$this->title = 'Վերբեռնել բանկի քաղվածքը';
 //$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="table-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h2><?= Html::encode($this->title) ?></h2>
 
     <?php  $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?php
     if(isset($error)){ ?>
-        <span class="red">Դուք մոռացել եք CSV վերբեռնել</span>
+        <span class="red">Դուք մոռացել եք բանկի քաղվածքը ընտրել</span>
         <?php
     }
     ?>
