@@ -48,7 +48,7 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
     <div class="form-group text-center">
-        <?= Html::submitButton('Ավելացնել', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Պահպանել', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
