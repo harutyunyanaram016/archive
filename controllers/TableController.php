@@ -87,7 +87,7 @@ class TableController extends Controller
 
         $query = Table::find();
         $count = $query->count();
-        $pagination = new Pagination(['totalCount' => $count]);
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize'=>10]);
         if(isset($_GET['sort'])){
             $dataProvider = $query->orderBy($_GET['sort'])->offset($pagination->offset)
                 ->limit($pagination->limit)
@@ -124,6 +124,7 @@ class TableController extends Controller
 
         return $this->render('index', [
             'table' => $table,
+            'pagination'=>$pagination
         ]);
     }
 

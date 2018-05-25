@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\LinkPager;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -58,6 +59,9 @@ $this->title = 'Աշխատանքային վահանակ';
                 <?php } ?>
                 </tbody>
             </table>
+        </div>
+        <div class="text-center">
+            <?= LinkPager::Widget(['pagination'=>$pagination]) ?>
         </div>
     </div>
 </div>
